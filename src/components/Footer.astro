@@ -1,0 +1,59 @@
+---
+import TreeIcon from "@/icons/TreeIcon.astro";
+import type { Link } from "@/pages/index.astro";
+import { Icon } from "astro-icon/components";
+
+const social: Link[] = [
+  {
+    name: "Github",
+    url: "https://github.com/gabrieldleon",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/gabrieldleon/",
+  },
+];
+
+const socialDict = {
+  x: "mdi:twitter",
+  linkedin: "mdi:linkedin",
+  github: "mdi:github",
+  instagram: "mdi:instagram",
+  youtube: "mdi:youtube",
+  tiktok: "mdi:tiktok",
+  facebook: "mdi:facebook",
+};
+
+const getSocialIcon = (url: string) => {
+  const domain = new URL(url).hostname;
+  const key = domain.replace("www.", "").split(".")[0];
+  const icon = socialDict[key];
+  return icon || null;
+};
+---
+
+<footer class="">
+  <ul class="flex justify-center gap-4 mb-6">
+    {
+      social.map((link) => (
+        <li>
+          <a href={link.url} target="_blank" rel="noopener noreferrer">
+            <span class="sr-only">{link.name}</span>
+            <Icon
+              name={getSocialIcon(link.url)}
+              class="size-12 text-white hover:text-black dark:hover:text-[#f1c54b] transition-all duration-150 hover:scale-125"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="flex justify-center">
+    <button
+      class="rounded-full px-8 py-4 text-xl font-bold bg-white hover:bg-black hover:text-white dark:text-black dark:hover:bg-[#f1c54b] dark:hover:text-black transition-all duration-150 flex items-center hover:scale-110"
+    >
+      <TreeIcon class="mr-2" />
+      Join Gabriel on Linktree
+    </button>
+  </div>
+</footer>

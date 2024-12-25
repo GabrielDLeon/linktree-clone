@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  class="p-4 fixed top-0 right-0 z-10 transition-all duration-500"
+  onclick="toggleTheme()"
+>
+  <span id="dark" class="block">
+    <Icon name="mdi:moon-waning-crescent" class="size-8" />
+  </span>
+  <span id="light" class="hidden">
+    <Icon name="mdi:moon-full" class="size-8" />
+  </span>
+</div>
+<header>
+  <div class="flex flex-col items-center text-center">
+    <picture>
+      <img
+        src="https://www.gabrieldleon.me/profile-picture.webp"
+        alt="@gabrieldleon profile picture"
+        class="size-24 rounded-full"
+      />
+    </picture>
+    <div class="text-4xl my-4">
+      <h1 class="text-lg font-bold dark:text-[#989898]">@gabrieldleon</h1>
+      <div class="font-extrabold">Gabriel De León</div>
+    </div>
+    <h2 class="text-pretty w-[360px] dark:text-white">
+      Hola, soy Gabriel. Desarrollador web que cuando se aburre hace clones de
+      páginas que le gustan.
+    </h2>
+  </div>
+</header>
+
+<script is:inline>
+  const darkbutton = document.getElementById("dark");
+  const lightbutton = document.getElementById("light");
+
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+      lightbutton.style.display = "none";
+      darkbutton.style.display = "block";
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+      lightbutton.style.display = "block";
+      darkbutton.style.display = "none";
+    }
+  };
+</script>

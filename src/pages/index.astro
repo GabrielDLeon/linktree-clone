@@ -1,11 +1,49 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import MoreIcon from "@/icons/MoreIcon.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export type Link = {
+  name: string;
+  url: string;
+};
+
+const links: Link[] = [
+  {
+    name: "Mi Porfolio Web",
+    url: "https://dev.gabrieldleon.me",
+  },
+  {
+    name: "Una receta para hoy",
+    url: "https://www.recetasgratis.net/receta-de-bizcochuelo-de-vainilla-esponjoso-57057.html",
+  },
+  {
+    name: "Una viaje para este año",
+    url: "https://www.paris.es/catacumbas",
+  },
+  {
+    name: "Un video para siempre",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <div class="flex flex-col gap-3 py-12">
+    {
+      links.map((link) => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white rounded-md p-5 relative text-center hover:bg-black hover:text-white hover:scale-[1.02] transition-all duration-300 ease-in-out shadow-md font-semibold
+          dark:bg-[#363636] dark:text-white dark:hover:bg-[#f1c54b] dark:hover:text-black"
+        >
+          {link.name}
+          <button class="absolute top-5 bottom-5 right-4">
+            <MoreIcon class="" />
+          </button>
+        </a>
+      ))
+    }
+  </div>
 </Layout>
