@@ -1,48 +1,53 @@
-# Astro Starter Kit: Basics
+# Linktree Clone
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Portrait](https://github.com/gabrieldleon/linktree-clone/blob/main/public/img/github_portrait.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+A customizable and lightweight Linktree clone built with **pnpm**, **Astro**, and **Tailwind CSS**. This project is designed to create a visually appealing and performant page for showcasing multiple links, ideal for social media profiles, personal portfolios, or any scenario where you need a single landing page for your links.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features  
+- **Fast and optimized**: Built with Astro for blazing-fast static site generation.  
+- **Responsive design**: Styled with Tailwind CSS to look great on all devices.  
+- **Easy to set up**: Manage dependencies and scripts using pnpm.  
+- **Customizable**: Tailored to your needs with flexible components and styles.  
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Tech Stack  
+- **Astro**: Framework for building static websites.  
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.  
+- **pnpm**: Fast and efficient package manager.  
 
-## 🚀 Project Structure
+## Getting Started  
 
-Inside of your Astro project, you'll see the following folders and files:
+### Prerequisites  
+Ensure you have the following installed on your machine:  
+- Node.js (>=16)  
+- pnpm (>=7)  
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Installation  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/gabrieldleon/linktree-clone.git
+   cd linktree-clone
+   ```
+2. Install dependencies:  
+   ```bash
+   pnpm install
+   ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Start the development server:  
+   ```bash
+   pnpm dev
+   ```
+   Your project will be available at `http://localhost:4321`.
 
-## 🧞 Commands
+### Building for Production  
+To build the project for production, run:  
+```bash
+pnpm build
+```  
+The built files will be generated in the `dist` folder, ready for deployment.
 
-All commands are run from the root of the project, from a terminal:
+## Contributing  
+Contributions are welcome! Feel free to fork the repository and submit a pull request.  
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License  
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
